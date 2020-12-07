@@ -6,15 +6,16 @@ strs = raw.split("\n\n")
 total = 0
 for group in strs:
 
-    # Python does not allow empty set initialization
-    set1 = {"a"}
-    set2 = {"a"}
-    set1.discard("a")
-    set2.discard("a")
+    set1 = set()
+    set2 = set()
 
     persons = group.split()
+
+    # Initialize the set of possibilities to the first person's answers
     for char in persons[0]:
         set1.add(char)
+
+    # For each other person
     for person in persons[1:]:
         set2 = set1.copy()
         for char in person:

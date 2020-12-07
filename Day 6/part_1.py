@@ -5,12 +5,14 @@ strs = raw.split("\n\n")
 
 total = 0
 for group in strs:
-    set = {"a"}
-    set.discard("a")  # Python does not allow empty set initialization
-    for char in group:
-        set.add(char)
+    questions_answered = set()
 
-    set.discard("\n")
-    total += len(set)
+    # Any answer from anyone is valid
+    for char in group:
+        questions_answered.add(char)
+
+    # Except for newline
+    questions_answered.discard("\n")
+    total += len(questions_answered)
 
 print(total)
