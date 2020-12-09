@@ -12,7 +12,7 @@ for i in range(975):
     found = False
     index = i + 25
     for j in range(25):
-        for k in range(25-j):
+        for k in range(25-j):  # would be incorrect if one number is exactly half of another
             if ints[index] == (ints[index-j-1] + ints[index-j-k-1]):
                 found = True
 
