@@ -22,7 +22,7 @@ for offset, bus in enumerate(buses):
         while (mindep +offset) % bint != 0:
             mindep += rotation
         print("bus" + bus + "considered, with rotation", rotation, "mindep", mindep, "offset", mindep%bint, offset%bint)
-        rotation *= bint
+        rotation *= bint  # Note: All input elements are prime. This needs tweaking for non-coprime buses.
 
 
 
